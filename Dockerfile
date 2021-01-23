@@ -1,4 +1,4 @@
-ARG COMMIT=f99a9c0
+ARG COMMIT=a57906c
 
 FROM tindy2013/subconverter:latest
 COPY base/ /base/
