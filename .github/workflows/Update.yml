@@ -20,9 +20,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.REPO_TOKEN }}
-    - name: Update Overture
+    - name: Update Subconverter
       run: |
-        u_commit=$(curl -s -N https://api.github.com/repos/iwestlin/gd-utils/commits | grep -o '[0-9a-z]\{40\}' | head -n 1 | cut -c1-7)
+        u_commit=$(curl -s -N https://api.github.com/repos/tindy2013/subconverter/commits | grep -o '[0-9a-z]\{40\}' | head -n 1 | cut -c1-7)
         [ $u_commit ] && sed -i "s/ARG COMMIT=.*/ARG COMMIT=$u_commit/g" Dockerfile
     - name: Push
       uses: stefanzweifel/git-auto-commit-action@v4
